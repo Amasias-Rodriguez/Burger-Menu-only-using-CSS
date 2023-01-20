@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background: #b2b2b2;
+    color: #fff;
+}
+
+.navbar{
+    position: relative;
+    background: #21935c;
+    height: 48px;
+    padding: 10px 12px;
+}
+
+.checkbox, .icons{
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.icons{
+    pointer-events: none;
+    font-size: 24px;
+}
+
+.checkbox{
+    opacity: 0;
+}
+
+.close{
+    display: none;
+}
+
+.checkbox:checked ~ .burger{
+    display: none;
+}
+
+.checkbox:checked ~ .close{
+    display: block;
+}
+
+
+.menu{
+    width: 200px;
+    position: absolute;
+    top: -106px;
+    z-index: -1;
+    right: 0px;
+    transition: 300ms;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    background: #234567;
+    display: block;
+    padding: 10px 12px;
+}
+
+.menu li a:hover{
+    background: #456789;
+}
+
+.checkbox:checked ~ .menu{
+    display: block;
+    top: 48px;
+}
+
+
+@media (min-width: 560px){
+    .checkbox, .burger, .close{
+        display: none;
+    }
+
+    .menu{
+        top: 0;
+        z-index: 1;
+        width: unset;
+        display: flex;
+        height: 48px;
+    }
+
+    .menu li a{
+        height: 48px;
+        padding: 14px 12px 6px;
+    }
+}
